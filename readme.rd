@@ -5,7 +5,7 @@ This project is an open source personal webpage using the MIT License agreement.
 - Thanks to SimonAKing for the open source web examples and inspiration.
 - Background fluid simulation effect from https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
 
-- 感谢 SimonAKing 提供的开源网页示例与灵感。
+- 感谢 SimonAKing 提供的灵感。
 - 背景流体模拟效果来自 https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
 --------------------------------------------------------------------------------
 The following is the full text of the MIT License:

@@ -244,8 +244,9 @@ document.addEventListener('DOMContentLoaded', function() {
       switch(target) {
         case 'home': index = 0; break;
         case 'about': index = 1; break;
-        case 'resume': index = 2; break;
-        case 'contact': index = 3; break;
+        case 'project': index = 2; break;
+        case 'resume': index = 3; break;
+        case 'contact': index = 4; break;
         default: index = 0;
       }
       scrollToPage(index);
@@ -297,3 +298,110 @@ document.addEventListener('DOMContentLoaded', function() {
       qqQR.style.display = 'block';
     }
   }
+
+
+// js/main.js
+"use strict";
+// …（前面的通用动画、intro、页面切换等代码保持不变）…
+
+// Project 部分逻辑
+function getStyle(obj, attr) {
+  return obj.currentStyle ? obj.currentStyle[attr] : window.getComputedStyle(obj, null)[attr];
+}
+function animate(obj, json, fn) {
+  clearInterval(obj.timer);
+  obj.timer = setInterval(function(){
+    var done = true;
+    for (var k in json) {
+      var leader = k === 'opacity'
+        ? parseInt((getStyle(obj,k)||1)*100)
+        : parseInt(getStyle(obj,k)) || 0;
+      var step = (json[k] - leader) / 10;
+      step = step>0 ? Math.ceil(step) : Math.floor(step);
+      leader += step;
+      if (k === 'opacity') {
+        obj.style.opacity = leader/100;
+        obj.style.filter = 'alpha(opacity=' + leader + ')';
+      } else if (k === 'zIndex') {
+        obj.style.zIndex = json[k];
+      } else {
+        obj.style[k] = leader + 'px';
+      }
+      if (leader !== json[k]) done = false;
+    }
+    if (done) {
+      clearInterval(obj.timer);
+      fn && fn();
+    }
+  }, 10);
+}
+
+window.onload = function(){
+  // 三个位置
+  var size = [
+    {top:20, left:0,   width:400, height:300, zIndex:1, opacity:40},
+    {top:0,  left:300, width:600, height:360, zIndex:3, opacity:100},
+    {top:20, left:800, width:400, height:300, zIndex:1, opacity:40}
+  ];
+  var activeCount = size.length;
+  var pj_c_wrap = document.getElementById("pj_card_wrap");
+  var PJcontentUl = pj_c_wrap.getElementsByClassName("project_content")[0];
+  var liArr = PJcontentUl.children;
+  var flag = true;
+  var speed = 7000;
+  var currentIndex = 0;
+
+  // 初始显示
+  updateSlides(true);
+
+  // 绑定左右按钮
+  var prevBtn = pj_c_wrap.querySelector('.prev');
+  var nextBtn = pj_c_wrap.querySelector('.next');
+  prevBtn.onclick = function(){ if(flag) move(false); };
+  nextBtn.onclick = function(){ if(flag) move(true); };
+
+  // 鼠标移入/移出
+  pj_c_wrap.onmouseover = function(){
+    prevBtn.style.display = nextBtn.style.display = "block";
+    clearInterval(pj_c_wrap.timer);
+  };
+  pj_c_wrap.onmouseout = function(){
+    prevBtn.style.display = nextBtn.style.display = "none";
+    pj_c_wrap.timer = setInterval(function(){ move(true); }, speed);
+  };
+  // 自动轮播
+  pj_c_wrap.timer = setInterval(function(){ move(true); }, speed);
+
+  // 更新幻灯片显示
+  function updateSlides(noAnimate){
+    for(var i=0;i<liArr.length;i++){
+      liArr[i].style.display = "none";
+    }
+    for(var j=0;j<activeCount;j++){
+      var idx = (currentIndex + j) % liArr.length;
+      var el = liArr[idx];
+      el.style.display = "block";
+      if(noAnimate){
+        el.style.top    = size[j].top + "px";
+        el.style.left   = size[j].left + "px";
+        el.style.width  = size[j].width + "px";
+        el.style.height = size[j].height + "px";
+        el.style.zIndex = size[j].zIndex;
+        el.style.opacity= size[j].opacity/100;
+      } else {
+        animate(el, size[j], function(){ flag = true; });
+      }
+    }
+  }
+  // 切换下一张/上一张
+  function move(next){
+    if(!flag) return;
+    flag = false;
+    currentIndex = next
+      ? (currentIndex + 1) % liArr.length
+      : (currentIndex - 1 + liArr.length) % liArr.length;
+    updateSlides();
+  }
+};
+
+// …（后面其它代码保持不变，比如手势监听、多设备适配等）…

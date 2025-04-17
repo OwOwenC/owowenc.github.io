@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>OwOwen</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="picture/favicon.ico" />
-</head>
+  </head>
 <body>
   <!--导航栏-->
   <nav>
     <ul class="navbar">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#project">Project</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="dropdown">
@@ -69,6 +70,56 @@
         </div>
       </section>
       
+      <!-- 项目页面 -->
+      <section id="project" class="page">
+        <div class="project-text">
+          <h1>Project</h1>
+            <div class="pj_card_wrap" id="pj_card_wrap">
+              <ul class="project_content">
+                <li>
+                  <div class="card">
+                    <div class="card-image" style="background-image:url(picture/1.jpg)"></div>
+
+                    <div class="card-text">
+                      Example Project 1: Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+                      <br>
+                      <a href="project1.html" class="project-link">...Learn more</a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <div class="card-image" style="background-image:url(picture/2.jpg)"></div>
+                    <div class="card-text">Example project 2
+
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <div class="card-image" style="background-image:url(picture/3.jpg)"></div>
+                    <div class="card-text">Example project 3
+                      
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <div class="card-image" style="background-image:url(picture/4.jpg)"></div>
+                    <div class="card-text">
+                      <a href="project.html" class="project-link">All Projects</a>
+                    </div>
+                  </div>
+                </li>
+                <!-- 如果有第4张，就继续写 -->
+              </ul>
+              <a href="javascript:;" class="prev">←</a>
+              <a href="javascript:;" class="next">→</a>
+            </div>
+        </div>
+
+      </section>     
+
       <!-- 简历页面 -->
       <section id="resume" class="page">
         <div class="resume-text">
@@ -85,9 +136,7 @@
       <section id="contact" class="page">
         <div class="contact-text">
           <h2>Contact</h2>
-          <p>Email:</p>
-          <p>Please contact me on Linkedin.</p>
-          <p>Phone</p>
+          <p>Email & Phone</p>
           <p>Please contact me on Linkedin.</p>
           <a href="https://www.linkedin.com/in/owowen/" target="_blank">
             <img src="picture/icons8-linkedin-60.png" alt="LinkedIn" style="cursor: pointer; margin: 0 10px;" />
