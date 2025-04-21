@@ -529,9 +529,9 @@ button {
 
 /* Resume 预览 */
 .resume-preview {
-  width: 100%;
+  width: 80%;
   max-width: 800px;
-  height: auto;
+  height: 60%;
   aspect-ratio: 8 / 5;  /* 保持宽高比例 */
   margin-top: 0px;
   margin-bottom: 10px;
