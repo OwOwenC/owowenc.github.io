@@ -101,6 +101,9 @@ main {
   
 .content-inner {
   position: relative;
+  padding-top: 48px;
+  box-sizing: border-box;
+  height: 100vh;
 }
   
 .content-inner,
@@ -127,7 +130,6 @@ main {
 
 /*--排版--*/
 .content-title {
-  font-family: Comic Sans MS, Helvetica Neue, Microsoft Yahei, -apple-system, sans-serif;
   font-size: 4.7rem;
   font-weight: 200;
   color: var(--color-title);
@@ -161,7 +163,6 @@ main {
   /*--内容字幕和字母发光--*/
 .content-subtitle {
   color: #fff;
-  font-family: Comic Sans MS, Helvetica Neue, Microsoft Yahei, -apple-system, sans-serif;
   font-size: 1.2rem;
   font-weight: 200;
   margin-bottom: 2em;
@@ -448,7 +449,6 @@ nav ul.navbar li.dropdown ul.dropdown-menu li a {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 
@@ -507,7 +507,6 @@ button {
 .about-text{
   margin-bottom: 1em; /* 段落之间的间距 */
   color: #fff;
-  font-family: "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif;  /*字体*/
 }
 
 
@@ -517,7 +516,6 @@ button {
 .project-text{
   margin-bottom: 1em; /* 段落之间的间距 */
   color: #fff;
-  font-family: "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif;  /*字体*/
 }
 
 
@@ -525,21 +523,23 @@ button {
 /*Resume*/
 
 .resume-text{
-  margin-bottom: 1em; /* 段落之间的间距 */
+  margin-bottom: 0px; /* 段落之间的间距 */
   color: #fff;
-  font-family: "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif;  /*字体*/
 }
 
 /* Resume 预览 */
 .resume-preview {
   width: 100%;
-  width: 800px;
-  height: 500px;
-  margin-top: 50px;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 8 / 5;  /* 保持宽高比例 */
+  margin-top: 0px;
+  margin-bottom: 10px;
   border: 2px solid #fff;
   border-radius: 12px;
   overflow: hidden;
 }
+
 
 .resume-preview iframe {
   width: 100%;
@@ -554,7 +554,6 @@ button {
 .contact-text{
   margin-bottom: 1em; /* 段落之间的间距 */
   color: #fff;
-  font-family: "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif;  /*字体*/
 }
 
 
