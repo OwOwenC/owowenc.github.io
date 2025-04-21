@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>OwOwen</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="picture/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="picture/icon.ico" />
   </head>
 <body>
   <!--导航栏-->
   <nav>
     <ul class="navbar">
-      <li><a href="#home">Home</a></li>
+      <li><a href="#home"><img src="picture/logo-white.png" alt="Logo" class="nav-logo"></a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#project">Project</a></li>
       <li><a href="#resume">Resume</a></li>
@@ -49,8 +49,10 @@
                   }
                 </style>
                 <!-- Title and Navigation -->
+                <img src="picture/logo-white-shadow.png" alt="Logo" class="home-logo">
                 <h2 class="content-title">Owen Cui</h2>
-                <h2 class="content-subtitle" original-content="Michigan State University">&nbsp;</h2>
+                <h2 class="content-subtitle" original-content="Michigan State University, MSU & Ms U">&nbsp;</h2>
+                <h2 class="content-subtitle" original-content="MSU & Ms U">&nbsp;</h2>
               </div>
           </div>
         </div>  
@@ -62,7 +64,7 @@
           <!-- 介绍文字 -->
           <div class="about-text">
             <h2>About Me</h2>
-            <p>I think There is nothing special about me to introduce. My Chinese name is Yaowen, but you can call me Owen, and I think it will be more convenient.</p>
+            <p>I am an international student from China at Michigan State University. My Chinese name is Yaowen, but you can call me Owen, and I think it will be more convenient.</p>
             <p>Languages: Chinese (native), English (fluent)</p>
             <p>I like traveling and love to explore anything unknown.</p>
             <p>I have been to more than 10 countries so far, and I hope to visit more!</p>
@@ -73,41 +75,50 @@
       <!-- 项目页面 -->
       <section id="project" class="page">
         <div class="project-text">
-          <h1>Project</h1>
+          <h1><a href="project.html" class="project-title-link">Project</a></h1>
             <div class="pj_card_wrap" id="pj_card_wrap">
               <ul class="project_content">
                 <li>
                   <div class="card">
-                    <div class="card-image" style="background-image:url(picture/1.jpg)"></div>
-
+                    <div class="card-image" style="background-image:url(picture/pj-bingo-1.png)"></div>
                     <div class="card-text">
-                      Example Project 1: Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-                      <br>
-                      <a href="project1.html" class="project-link">...Learn more</a>
+                      <h4 style="margin-bottom: 0px;">Video Bingo Game</h4>
+                      <p>
+                        Video Bingo Game is a Figma prototype that turns short video watching into a playful bingo challenge. Users spot content in TikTok or YouTube videos and mark it on a bingo grid to win. It explores UX, gamification, and casual interaction.
+                      </p>
+                      <a href="project-bingo-game.html" class="project-link">...Learn more</a>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div class="card">
-                    <div class="card-image" style="background-image:url(picture/2.jpg)"></div>
-                    <div class="card-text">Example project 2
-
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="card">
-                    <div class="card-image" style="background-image:url(picture/3.jpg)"></div>
-                    <div class="card-text">Example project 3
-                      
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="card">
-                    <div class="card-image" style="background-image:url(picture/4.jpg)"></div>
+                    <div class="card-image" style="background-image:url(picture/code.png)"></div>
                     <div class="card-text">
-                      <a href="project.html" class="project-link">All Projects</a>
+                      <h4 style="margin-bottom: 0px;">Personal Portfolio Website</h4>
+                      <p>
+                        This is my first personal web project. During the project, I improved my front-end development skills. I deeply understood the relationship between web page structure and user experience, laying the foundation for subsequent, more complex web development.
+                      </p>
+                      <a href="project-website.html" class="project-link">...Learn more</a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <div class="card-image" style="background-image:url(picture/patent-1.png)"></div>
+                    <div class="card-text">
+                      <h4 style="margin-bottom: 0px;">Hydry Channel gate</h4>
+                      <p>
+                        This project designed and implemented an automated water control device integrating gate opening and closing, flow monitoring, and remote control functions. It has obtained two national patents.
+                      </p>
+                      <a href="project-patent-1.html" class="project-link">...Learn more</a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <div class="card-image" style="background-image:url(picture/more-project.png)"></div>
+                    <div class="card-text">
+                      <h2><a href="project.html" class="project-link">Go see All Projects</a></h2>
                     </div>
                   </div>
                 </li>
@@ -129,6 +140,15 @@
               <img src="picture/icons8-download-24.png" alt="download resume">
             </a>
           </p>
+          <div class="resume-preview">
+            <iframe
+              src="document/resume.pdf#view=FitH"
+              frameborder="0"
+              width="100%"
+              height="100%">
+              <p>Your browser does not support embedded PDF，<a href="document/resume.pdf">Please click to download</a>.</p>
+            </iframe>
+          </div>
         </div>
       </section>
       

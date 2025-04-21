@@ -404,4 +404,21 @@ window.onload = function(){
   }
 };
 
-// …（后面其它代码保持不变，比如手势监听、多设备适配等）…
+document.addEventListener('DOMContentLoaded', function () {
+
+  // 新增：处理带锚点跳转（如 index.html#resume）
+  const hash = window.location.hash;
+  if (hash) {
+    const target = hash.replace('#', '');
+    const indexMap = {
+      home: 0,
+      about: 1,
+      project: 2,
+      resume: 3,
+      contact: 4
+    };
+    if (indexMap[target] !== undefined) {
+      scrollToPage(indexMap[target]);
+    }
+  }
+});

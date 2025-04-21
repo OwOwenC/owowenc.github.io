@@ -1,6 +1,4 @@
-/*-------------------------------------
-  CSS Variables & Global Settings
--------------------------------------*/
+/*--全局设置--*/
 html {
   --color-link: #5f5f5f;
   --color-link-hover: #ff963b;
@@ -63,9 +61,7 @@ a {
 }
 
   
-/*-------------------------------------
-  Fade Animation
--------------------------------------*/
+/*--淡入淡出动画--*/
 .fade {
   opacity: 0;
   transition: all 1s;
@@ -76,9 +72,7 @@ a {
   transform: none;
 }
   
-/*-------------------------------------
-  Layout & Structure
--------------------------------------*/
+/*--布局和结构--*/
 main {
   overflow: hidden;
 }
@@ -124,25 +118,21 @@ main {
   text-align: center;
 }
   
-/*-------------------------------------
-  Content Intro Specific
--------------------------------------*/
+/*--内容简介具体--*/
 .content-intro .content-inner {
   background: var(--color-content);
   user-select: none;
 }
   
 
-/*-------------------------------------
-  Typography
--------------------------------------*/
+/*--排版--*/
 .content-title {
   font-family: Comic Sans MS, Helvetica Neue, Microsoft Yahei, -apple-system, sans-serif;
   font-size: 4.7rem;
   font-weight: 200;
   color: var(--color-title);
   line-height: 1;
-  margin-top: 0.8em;
+  margin-top: 0em;
   margin-bottom: 0.3em;
   animation: whiteShadow 1.5s ease-in-out infinite alternate;
   text-shadow: #452d2d 0 0 1px, #fffffb 0 0 1px, #fffffb 0 0 2px;
@@ -154,15 +144,13 @@ main {
   }
 }
   
-/*-------------------------------------
-  White Shadow Animation
--------------------------------------*/
+/*--白影动画--*/
 @keyframes whiteShadow {
   0% {
-    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 5px #333, 0 0 8px #333, 0 0 9px #333, 0 0 10px #333, 0 0 15px #333;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 5px #333, 0 0 8px #333, 0 0 9px #333;
   }
   to {
-    text-shadow: 0 0 0.5px #fff, 0 0 1px #fff, 0 0 1.5px #fff, 0 0 2px #333, 0 0 4px #333, 0 0 5px #333, 0 0 6px #333, 0 0 8px #333;
+    text-shadow: 0 0 0.5px #fff, 0 0 1px #fff, 0 0 1.5px #fff, 0 0 2px #333, 0 0 4px #333, 0 0 5px #333;
   }
 }
   
@@ -170,9 +158,7 @@ main {
 
 
 
-  /*-------------------------------------
-    Content Subtitle & Letter Glow
-  -------------------------------------*/
+  /*--内容字幕和字母发光--*/
 .content-subtitle {
   color: #fff;
   font-family: Comic Sans MS, Helvetica Neue, Microsoft Yahei, -apple-system, sans-serif;
@@ -229,7 +215,7 @@ main {
 }
   
 
-/* 各个字母的动画延时 */
+/*--各个字母的动画延时--*/
 .content-subtitle span:nth-child(1) { animation-delay: 0.05s; }
 .content-subtitle span:nth-child(2) { animation-delay: 0.1s; }
 .content-subtitle span:nth-child(3) { animation-delay: 0.15s; }
@@ -264,14 +250,15 @@ main {
 .content-subtitle span:nth-child(32) { animation-delay: 1.6s; }
 .content-subtitle span:nth-child(33) { animation-delay: 1.65s; }
 .content-subtitle span:nth-child(34) { animation-delay: 1.7s; }
+.content-subtitle span:nth-child(35) { animation-delay: 1.75s; }
+.content-subtitle span:nth-child(36) { animation-delay: 1.8s; }
+.content-subtitle span:nth-child(37) { animation-delay: 1.85s; }
 
 
 
 
 
-/*-------------------------------------
-  Background & Card Styles
--------------------------------------*/
+/*--背景和卡片样式--*/
 #background {
   position: absolute;
   width: 100%;
@@ -499,6 +486,10 @@ button {
   max-width: 800px;
   margin: 0 auto;
   text-align: left; /* 确保文字左对齐 */
+
+  /*遮罩层*/
+  pointer-events: none;
+  user-select: none;
 }
 
 .about-photo {
@@ -506,6 +497,11 @@ button {
   height: auto;
   border-radius: 20%; /* 若想让照片变成圆形头像 */
   margin-right: 20px; /* 照片与文字之间间距 */
+
+  /*遮罩层（禁止选中）*/
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 .about-text{
@@ -534,6 +530,21 @@ button {
   font-family: "Comic Sans MS", "Helvetica Neue", "Microsoft Yahei", -apple-system, sans-serif;  /*字体*/
 }
 
+/* Resume 预览 */
+.resume-preview {
+  width: 100%;
+  width: 800px;
+  height: 500px;
+  margin-top: 50px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.resume-preview iframe {
+  width: 100%;
+  height: 100%;
+}
 
 
 
@@ -580,8 +591,15 @@ button {
   position: relative;
   width: 1200px;
   height: 360px;
-  margin: 100px auto;
+  margin: 30px auto;
   overflow: hidden;
+}
+
+.project-title-link {
+  color: #fff; /* 或你想要的颜色 */
+}
+.project-title-link:hover {
+  color: var(--color-link-hover); /* 可选：悬停时变色 */
 }
 
 /* project-link */
@@ -656,10 +674,29 @@ button {
 }
 
 
-
 .prev {
   left: 30px;
 }
 .next {
   right: 30px;
+}
+
+
+.nav-logo {
+  height: 100%;
+  max-height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+
+.home-logo {
+  height: 10rem; /* 与 .content-title 字体大小一致 */
+  width: auto;
+  display: block;
+  margin-bottom: 0em;
+  /*遮罩层（禁止选中）*/
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }

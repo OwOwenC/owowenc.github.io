@@ -109,17 +109,178 @@
   h1 {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   h2 {
     font-size: 1.6rem;
     color: var(--color-link-hover);
-    margin-top: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   
   p {
     text-align: justify;
-    margin-bottom: 1.2em;
+    text-indent: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  ul.custom-indent {
+    padding-left: 2em; /* 整体左缩进，类似“两格字宽” */
+  }
+
+  .image-double {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* 避免小屏幕溢出 */
+    margin: 20px 0;
   }
   
+  .image-double img {
+    width: 48%;
+    height: auto;
+    border-radius: 8px; /* 可选：圆角 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 可选：阴影美化 */
+  }
+  
+
+  .image-single {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .image-single img {
+    width: 100%;       /* 占满容器宽度 */
+    height: auto;      /* 自动保持原图比例 */
+    display: block;    /* 避免底部多余空白 */
+    border-radius: 8px; /* 可选美化 */
+    margin: 20px 0;
+  }
+  
+
+  .nav-logo {
+    height: 100%;
+    max-height: 32px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .project-title-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  .project-title-link:hover {
+    color: var(--color-link-hover);
+    text-decoration: none;
+  }
+
+
+  /*Project卡片*/
+  .project-cards-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .project-card-horizontal {
+    display: flex;
+    background-color: #2b2b2b;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 250px;
+  }
+  
+  .project-card-horizontal:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-card-horizontal img {
+    height: 100%;
+    width: 200px;
+    object-fit: cover;  /* 保持比例填满区域 */
+    border-right: 1px solid #444;
+  }
+  
+  .card-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+  
+  .card-info h2 {
+    color: var(--color-link-hover);
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+  }
+  
+  .card-info p {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  
+  .card-link {
+    align-self: flex-start;
+    background-color: #444;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .card-link:hover {
+    background-color: var(--color-link-hover);
+    color: #000;
+  }
+  
+  /*仅图片*/
+  .project-card-image {
+    height: 250px;
+    width: 100%;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-image-only {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+  }
+  
+
+  /*表格*/
+  table.patent-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .patent-table th,
+  .patent-table td {
+    border: 5px solid #333; /* 粗边框 */
+    padding: 12px 16px;     /* 内边距 */
+    text-align: left;
+  }
+
+  .patent-table th {
+    background-color: #2b2b2b;
+    font-weight: bold;
+  }
